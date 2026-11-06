@@ -1,46 +1,30 @@
-# 💬 Chatroom (Stranger-chat style)
+# 💬 Chatroom + Discord bot (ek hi service)
 
-Node.js + Express + Socket.IO + MongoDB. White theme.
+Node.js + Express + Socket.IO + MongoDB + discord.js. Website aur Discord bot ek hi process me chalte hain.
 
-## Setup
+## Chalana
 ```
 npm install
-copy .env.example .env      (Mac/Linux: cp .env.example .env)
+copy .env.example .env     (Mac/Linux: cp .env.example .env)
 npm start
 ```
-`.env` me `MONGO_URI`, `DOB_PEPPER`, `ADMIN_USERS` bharo. Phir http://localhost:3000
+
+## Render par (ek service)
+- Build Command: `npm install`
+- Start Command: `node server.js`
+- Environment me `.env.example` ke variables daalo (Add from .env se paste kar sakte ho)
+- `DISCORD_TOKEN` na ho to sirf website chalegi
 
 ## Features
-- Username + DOB login (naya username = auto account, DOB hash me save, username unique)
-- 8 chat rooms (General, Hindi, Friends, Gaming, Music, Movies, Tech, Study) + live online list
-- Private messages (DM) with unread badge
-- Random 1-to-1 stranger chat (anonymous), Next/Stop, optional interest match
-- Optional profile: gender + country
-- Block / Unblock, Report (room, DM, random)
-- Bad-word mask, links aur phone numbers auto-remove, spam/rate limit
-- Admin panel `/admin.html`: reports dekho, user ban/unban
+Website: rooms, DM, random 1-to-1 chat, profile, block/report, bad-word filter, admin panel (`/admin.html`).
+Discord bot: report alerts (Ban/Dismiss buttons), health alerts, `/status /online /reports /user /ban /unban /kick /announce`.
 
-## Admin kaise banao
-1. `.env` me `ADMIN_USERS=tumhara_username`
-2. Server chalao aur **pehle khud** us username se login (register) karo
-3. Chat me "Admin" button dikhega
-
-## Security
-- DOB: HMAC(pepper) + bcrypt. 5 galat DOB par 15 min lock. IP rate limit.
-- httpOnly + SameSite=Strict cookie, session token hashed, strict CSP, same-origin check
-- XSS-safe rendering, input validation, message rate limit
-- Ban account-level hai (IP ban nahi), banned user naye username se aa sakta hai
+## Admin
+`ADMIN_USERS=tumhara_username` set karo aur deploy ke baad **pehle khud us username se login** karo.
 
 ## Structure
 ```
-server.js, filter.js     backend
-public/index.html        login
-public/chat.html         chat app
-public/admin.html        admin
-public/rules.html        rules
-public/js, css           frontend
+server.js, filter.js     website backend
+bot/                     discord bot (server.js isse start karta hai)
+public/                  frontend
 ```
-
-## Discord bot
-`discord-bot/` folder me alag bot hai (alag deploy hota hai). Website me `BOT_API_KEY` set karo, phir `discord-bot/README.md` dekho.
-Bot API (`/api/bot/*`) sirf us key se khulti hai; key na ho to band rehti hai.
