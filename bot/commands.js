@@ -15,9 +15,16 @@ const commands = [
   new SlashCommandBuilder().setName("announce").setDescription("Website par announcement bhejo")
     .addStringOption((o) => o.setName("text").setDescription("Message (max 200 chars)").setRequired(true).setMaxLength(200))
     .addStringOption((o) => o.setName("room").setDescription("Kis room me (default: sab)").addChoices(
-      { name: "Sab rooms", value: "all" }, { name: "General", value: "general" }, { name: "Hindi Chat", value: "hindi" },
-      { name: "Make Friends", value: "friends" }, { name: "Gaming", value: "gaming" }, { name: "Music", value: "music" },
-      { name: "Movies & Series", value: "movies" }, { name: "Tech", value: "tech" }, { name: "Study", value: "study" })),
+      { name: "Sab rooms", value: "all" },
+      { name: "General", value: "general" },
+      { name: "International", value: "international" },
+      { name: "Indo-Pak Dosti", value: "indopak" },
+      { name: "Make Friends", value: "friends" },
+      // { name: "Hindi Chat", value: "hindi" },
+      // { name: "Gaming", value: "gaming" },
+      // { name: "Music", value: "music" },
+      // { name: "Movies & Series", value: "movies" },
+      // { name: "Tech", value: "tech" },
+      // { name: "Study", value: "study" },
+    )),
 ].map((c) => c.toJSON());
-
-module.exports = { commands };
