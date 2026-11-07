@@ -35,5 +35,5 @@ public/                  frontend
 ## Discord bridge (channel <-> site room)
 1. Discord Developer Portal -> Bot -> **Message Content Intent** ON karo.
 2. Bot ko us channel me View Channel, Send Messages, Read Message History, Add Reactions permission do.
-3. Render env: `BRIDGE_CHANNEL_ID=<channel id>` aur (optional) `BRIDGE_ROOM=general`.
+3. Render env: `BRIDGES=channelId:roomId,channelId:roomId,...` (jitne chahiye).
 4. Redeploy. Site ka room (sidebar me 🔗) aur Discord channel ab messages + reactions share karte hain.
