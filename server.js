@@ -39,7 +39,7 @@ const GENDERS = ["", "male", "female", "other"];
 const ROOMS = [
   { id: "general", name: "General" },
   { id: "international", name: "International" },
-  { id: "indopak", name: "Indo-Pak Dosti" },
+  { id: "indopak", name: "Indo-Pak" },
   { id: "friends", name: "Make Friends" },
   // { id: "hindi", name: "Hindi Chat" },
   // { id: "gaming", name: "Gaming" },
