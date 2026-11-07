@@ -27,7 +27,7 @@ input:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--a
 
 /* Chat layout */
 .app{height:100%;display:flex}
-.side{width:260px;background:var(--side);border-right:1px solid var(--border);display:flex;flex-direction:column;flex:none}
+.side{width:200px;background:var(--side);border-right:1px solid var(--border);display:flex;flex-direction:column;flex:none}
 .brand{font-weight:700;font-size:18px;padding:16px 16px 10px}
 .rbtn{margin:0 12px 6px;background:var(--accent);color:#fff;border:0;border-radius:10px;padding:11px;font-weight:600;cursor:pointer}
 .rbtn.on{outline:3px solid var(--accent-soft)}
@@ -72,7 +72,7 @@ h2{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--mute
 .composer input{flex:1}
 .composer button{background:var(--accent);color:#fff;border:0;border-radius:10px;padding:0 20px;font-weight:600;cursor:pointer}
 .composer button:disabled{opacity:.5;cursor:not-allowed}
-.users{width:210px;background:var(--side);border-left:1px solid var(--border);overflow-y:auto;flex:none}
+.users{width:200px;background:var(--side);border-left:1px solid var(--border);overflow-y:auto;flex:none}
 #users{list-style:none;padding:0 8px}
 #users li{padding:7px 10px;border-radius:8px;font-size:14px;display:flex;justify-content:space-between;gap:6px;cursor:pointer}
 #users li:hover{background:var(--soft)}
