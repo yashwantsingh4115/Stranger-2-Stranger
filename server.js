@@ -38,13 +38,15 @@ const GENDERS = ["", "male", "female", "other"];
 
 const ROOMS = [
   { id: "general", name: "General" },
-  { id: "hindi", name: "Hindi Chat" },
+  { id: "international", name: "International" },
+  { id: "indopak", name: "Indo-Pak Dosti" },
   { id: "friends", name: "Make Friends" },
-  { id: "gaming", name: "Gaming" },
-  { id: "music", name: "Music" },
-  { id: "movies", name: "Movies & Series" },
-  { id: "tech", name: "Tech" },
-  { id: "study", name: "Study" },
+  // { id: "hindi", name: "Hindi Chat" },
+  // { id: "gaming", name: "Gaming" },
+  // { id: "music", name: "Music" },
+  // { id: "movies", name: "Movies & Series" },
+  // { id: "tech", name: "Tech" },
+  // { id: "study", name: "Study" },
 ];
 const ROOM_IDS = new Set(ROOMS.map((r) => r.id));
 
