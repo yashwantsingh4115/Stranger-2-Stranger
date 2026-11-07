@@ -32,8 +32,14 @@ bot/                     discord bot (server.js isse start karta hai)
 public/                  frontend
 ```
 
-## Discord bridge (channel <-> site room)
+## Discord bridge (channels <-> site rooms)
 1. Discord Developer Portal -> Bot -> **Message Content Intent** ON karo.
-2. Bot ko us channel me View Channel, Send Messages, Read Message History, Add Reactions permission do.
+2. Bot ko bridge wale channels me ye permissions do: View Channel, Send Messages, Read Message History, Add Reactions, **Manage Webhooks** (site ke naam se message dikhane ke liye), **Manage Messages** (site se delete sync ke liye).
 3. Render env: `BRIDGES=channelId:roomId,channelId:roomId,...` (jitne chahiye).
-4. Redeploy. Site ka room (sidebar me 🔗) aur Discord channel ab messages + reactions share karte hain.
+4. Redeploy. Bridge wale rooms sidebar me 🔗 se dikhte hain.
+
+Kya sync hota hai: messages, reactions, reply, Discord me edit/delete, site par admin delete.
+
+Discord commands (admin only): `/bridge on|off|status [room]`, `/slowmode seconds [room]`.
+
+Env (optional): `BLOCK_LINKS=discord|all|off`, `BRIDGE_WEBHOOK=0` (webhook band), `BRIDGE_AVATAR_URL`.
